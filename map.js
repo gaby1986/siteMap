@@ -2,6 +2,7 @@ let enviroment = "";
 let pages = []
 
 esURLValida(window.location.href)
+console.log(enviroment)
 
 //DATOS DE USUARIO
 const email = vsm.session.email != "" ? vsm.session.email : "";
