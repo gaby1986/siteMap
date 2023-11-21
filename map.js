@@ -138,6 +138,24 @@ function PageType(name, myUrl, interaction, myEvents, isArticle) {
     }
 }
 
+function GlobalActions(actionEvent){
+        url = window.location.href
+        if (email) {
+            actionEvent.user = actionEvent.user || {};
+            actionEvent.user.attributes = actionEvent.user.attributes || {};
+            actionEvent.user.identities = actionEvent.user.identities || {};
+            actionEvent.user.attributes.URL || {};
+            actionEvent.user.attributes.contentZones || {};
+            actionEvent.user.attributes.emailAddress = email;
+            actionEvent.user.attributes.isSuscription = isSuscriber;
+            actionEvent.user.attributes.name = userName;
+            actionEvent.user.attributes.lastName = userName;
+            actionEvent.user.attributes.date = dateTime
+            actionEvent.user.identities.userIdCms = idUser;
+        }
+        return actionEvent;
+}
+
 function PayWallActions(actionEvent) {
     let limit = new URL(window.location.href).searchParams.get("limit")
     actionEvent.user = actionEvent.user || {};
