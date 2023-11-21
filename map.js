@@ -139,22 +139,22 @@ function PageType(name, myUrl, interaction, myEvents, isArticle) {
     }
 }
 
-function GlobalActions(actionEvent){
-        url = window.location.href
-        if (email) {
-            actionEvent.user = actionEvent.user || {};
-            actionEvent.user.attributes = actionEvent.user.attributes || {};
-            actionEvent.user.identities = actionEvent.user.identities || {};
-            actionEvent.user.attributes.URL || {};
-            actionEvent.user.attributes.contentZones || {};
-            actionEvent.user.attributes.emailAddress = email;
-            actionEvent.user.attributes.isSuscription = isSuscriber;
-            actionEvent.user.attributes.name = firstName;
-            actionEvent.user.attributes.lastName = lastName;
-            actionEvent.user.attributes.date = dateTime
-            actionEvent.user.identities.userIdCms = idUser;
-        }
-        return actionEvent;
+function GlobalActions(actionEvent) {
+    url = window.location.href
+    if (email) {
+        actionEvent.user = actionEvent.user || {};
+        actionEvent.user.attributes = actionEvent.user.attributes || {};
+        actionEvent.user.identities = actionEvent.user.identities || {};
+        actionEvent.user.attributes.URL || {};
+        actionEvent.user.attributes.contentZones || {};
+        actionEvent.user.attributes.emailAddress = email;
+        actionEvent.user.attributes.isSuscription = isSuscriber;
+        actionEvent.user.attributes.name = firstName;
+        actionEvent.user.attributes.lastName = lastName;
+        actionEvent.user.attributes.date = dateTime
+        actionEvent.user.identities.userIdCms = idUser;
+    }
+    return actionEvent;
 }
 
 function PayWallActions(actionEvent) {
@@ -280,4 +280,3 @@ function esURLValida(url) {
     var regex = url.match(/^https:\/\/(?:dev|qa|www)\./i);
     enviroment = regex[0]
 }
-
