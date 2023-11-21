@@ -6,7 +6,8 @@ esURLValida(window.location.href)
 //DATOS DE USUARIO
 const email = vsm.session.email != "" ? vsm.session.email : "";
 const idUser = vsm.session.id != "" ? vsm.session.id : "";
-const userName = vsm.session.title != "" ? vsm.session.title : "";
+const firstName = vsm.session.name != "" ? vsm.session.name : "";
+const lastName = vsm.session.lastName != "" ? vsm.session.lastName : "";
 const isSuscriber = site.session.isSuscriber() && site.session != undefined ? "Suscriptor" : "Usuario";
 let dateTime = new Date();
 dateTime = `${dateTime.getDate()}/${dateTime.getMonth()}/${dateTime.getFullYear()} - hora ${dateTime.getHours()}:${dateTime.getMinutes()}`
@@ -148,8 +149,8 @@ function GlobalActions(actionEvent){
             actionEvent.user.attributes.contentZones || {};
             actionEvent.user.attributes.emailAddress = email;
             actionEvent.user.attributes.isSuscription = isSuscriber;
-            actionEvent.user.attributes.name = userName;
-            actionEvent.user.attributes.lastName = userName;
+            actionEvent.user.attributes.name = firstName;
+            actionEvent.user.attributes.lastName = lastName;
             actionEvent.user.attributes.date = dateTime
             actionEvent.user.identities.userIdCms = idUser;
         }
